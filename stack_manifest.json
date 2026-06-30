@@ -1,0 +1,16 @@
+{
+  "runtime": "Docker Compose",
+  "build_method": "docker compose build && docker compose up -d",
+  "entry_point": "multi-service orchestrator",
+  "dependencies": ["docker", "docker compose", "llama.cpp", "chromadb", "postgres", "redis", "searxng", "n8n"],
+  "ports": [8080, 8081, 8082, 8000, 5432, 5678, 6379, 8484, 8888, 9090, 8383],
+  "deploy_steps": [
+    "docker compose config",
+    "docker compose build",
+    "docker compose up -d"
+  ],
+  "has_docker": true,
+  "has_compose": true,
+  "has_npm": false,
+  "notes": "Compose file fixed: moved extra top-level services into services block. Host Docker daemon is not running; deploy needs active Docker engine."
+}

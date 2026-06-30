@@ -1,0 +1,18 @@
+[
+  {
+    "id": "CMD-001",
+    "file": "docker-compose.yml",
+    "line_range": "1-10",
+    "issue": "Compose file contains extra top-level keys (tools-ui, whatsapp-webhook, health-monitor) that are not allowed by the schema, causing `docker compose config` to fail.",
+    "severity": "high",
+    "suggested_fix": "Move the three extra service blocks under the root services key so docker compose config validates."
+  },
+  {
+    "id": "CMD-002",
+    "file": "README.md",
+    "line_range": "1-120",
+    "issue": "README does not mention the local requirement that Docker must be running before `docker compose build && up` will work. This is a missing environment precondition.",
+    "severity": "medium",
+    "suggested_fix": "Add a Docker check / explicit precondition note in the README Getting Started section."
+  }
+]

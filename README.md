@@ -90,13 +90,27 @@ When a customer requests a human:
 - Freshdesk web portal
 - WhatsApp (collected details → adapter)
 
-## Quick Start
+## Getting Started
+
+**Prerequisites:** Docker Engine and Docker Compose must be installed and running.
 
 ```bash
-# 1. Clone
+# 1. Verify Docker is active (required)
+docker info >/dev/null 2>&1 || echo "Docker daemon is not running"
+docker compose version
+```
+
+```bash
+# 2. Clone the repository
 git clone https://github.com/OneByJorah/CommandDesk.git
 cd CommandDesk
 
+# 3. Start the platform
+docker compose up -d --build
+
+# 4. Verify services
+docker compose ps
+```
 # 2. Run setup
 ./scripts/setup.sh
 

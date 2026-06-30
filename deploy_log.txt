@@ -1,0 +1,6 @@
+[CommandDesk deploy attempt]
+1. docker compose config -> FAILED (extra top-level keys in docker-compose.yml)
+2. Applied fix: moved tools-ui, whatsapp-webhook, health-monitor under services.
+3. docker compose config -> OK
+4. docker compose build -> FAILED: "Cannot connect to the Docker daemon at unix:///var/run/docker.sock"
+Root cause: Docker daemon is not running on this host (system policy: Docker stopped/masked).
